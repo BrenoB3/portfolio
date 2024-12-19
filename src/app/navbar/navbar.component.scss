@@ -1,11 +1,12 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+    justify-content: space-around;
+    padding: 1rem 1rem;
     background: #ffffff;
     color: #1e293b;
     border-bottom: 1px solid #e0e0e0;
+    height: 12px;
 
     &-logo {
         display: flex;
