@@ -1,62 +1,87 @@
-// Variáveis para cores
-$primary-color: #ffffff; // Cor de fundo da barra
-$secondary-color: #007f5f; // Cor para hover nos links
-$light-color: #1e293b; // Cor principal para texto
-$border-color: #e0e0e0; // Cor da borda sutil
+@font-face {
+    font-family: 'Poppins'; // Nome da fonte
+    src: url('/assets/fonts/poppins.woff2') format('woff2'),
+        url('/assets/fonts/poppins.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-.navbar {
+$content-padding: 1rem; // Variável para o espaçamento das seções
+$max-width: 900px; // Largura máxima para as seções
+$background-color: #1e293b; // Fundo escuro
+$primary-color: #333333; // Cor primária para o texto
+$heading-font-size: 3.5rem; // Tamanho da fonte para os títulos
+$body-font-size: 1.2rem; // Tamanho da fonte para o corpo do texto
+
+
+
+* {
+    font-family: 'Poppins', sans-serif; // Usando a fonte Poppins
+    color: $primary-color; // Cor padrão do texto
+}
+
+h1,
+h2,
+h3 {
+    font-size: $heading-font-size; // Tamanho de fonte para os títulos
+    color: #1a1a1a; // Cor específica para os títulos
+    letter-spacing: 0.02em; // Espaçamento entre as letras
+    word-spacing: 0.2em; // Espaçamento entre as palavras
+    font-family: 'Poppins', sans-serif; // Usando a fonte Poppins
+}
+
+.developer-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem; // Tamanho de fonte para os títulos
+    color: #0652e9;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif; // Usando a fonte Poppins
+    font-size: $body-font-size; // Tamanho de fonte para o parágrafo
+    color: #666666; // Cor para o texto do parágrafo
+}
+
+.content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    background: $primary-color;
-    color: $light-color;
-    border-bottom: 1px solid $border-color; // Linha sutil na parte inferior
-    height: 12px;
-
-    // Logo da barra
-    &-logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: $light-color;
-        text-transform: uppercase;
-    }
-
-    // Links principais
-    &-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
+    flex-direction: column;
+    align-items: center; // Alinha horizontalmente no centro
+    min-height: 150vh; // Garante que a altura seja no mínimo a altura da tela
+    text-align: center; // Alinha o texto no centro
+    padding: $content-padding;
+}
 
 
-        li {
-            a {
-                text-decoration: none;
-                color: $light-color;
-                font-size: 1rem;
-                font-weight: 500;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-                transition: color 0.3s ease;
+section {
+    margin: 2rem 0; // Espaçamento entre as seções
+    width: 80%; // Opcional: limite a largura das seções
+    max-width: $max-width; // Largura máxima para a seção
+}
 
-                &:hover {
-                    color: $secondary-color;
-                }
-            }
-        }
-    }
+#contatos {
+    display: flex;
+    justify-content: center; // Alinha os itens no centro horizontalmente
+    gap: 20px; // Espaço entre os itens
+}
 
-    // Toggle para dispositivos móveis
-    &-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
+.GitHub,
+.LinkedIn {
+    display: flex; // Usando flexbox para alinhar os itens dentro do parágrafo
+    align-items: center; // Alinha verticalmente o ícone e o texto
+    color: #0652e9;
+}
 
-        span {
-            width: 25px;
-            height: 3px;
-            background: $light-color;
-            margin: 4px 0;
-            transition: transform 0.3s ease;
-        }
-    }
+.GitHub img,
+.LinkedIn img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(100%) saturate(536%) hue-rotate(179deg) brightness(93%) contrast(98%);
+    margin-right: 8px; // Espaço entre o ícone e o texto
+}
+
+
+h1,
+h2,
+p {
+    margin: 0.5rem 0; // Espaçamento entre os elementos
 }

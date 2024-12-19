@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { NavbarComponent } from "./navbar/navbar.component";
@@ -12,4 +12,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 })
 export class AppComponent {
   title = 'Portfolio';
+
+  @Input() inicio: string = '<'; // Definindo uma variável de entrada para o nome
+  @Input() fim: string = '/>'; // Definindo uma variável de entrada para o nome
 }
