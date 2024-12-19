@@ -1,51 +1,43 @@
-// Variáveis para cores
-$primary-color: #ffffff; // Cor de fundo da barra
-$secondary-color: #007f5f; // Cor para hover nos links
-$light-color: #1e293b; // Cor principal para texto
-$border-color: #e0e0e0; // Cor da borda sutil
-
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1rem;
-    background: $primary-color;
-    color: $light-color;
-    border-bottom: 1px solid $border-color; // Linha sutil na parte inferior
-    height: 12px;
+    padding: 1rem 2rem;
+    background: #ffffff;
+    color: #1e293b;
+    border-bottom: 1px solid #e0e0e0;
 
-    // Logo da barra
     &-logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: $light-color;
-        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+
+        img {
+            max-height: 40px;
+            width: auto;
+        }
     }
 
-    // Links principais
     &-links {
         display: flex;
         gap: 2rem;
         list-style: none;
 
-
         li {
             a {
                 text-decoration: none;
-                color: $light-color;
+                color: #1e293b;
                 font-size: 1rem;
                 font-weight: 500;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
                 transition: color 0.3s ease;
 
                 &:hover {
-                    color: $secondary-color;
+                    color: #007f5f;
                 }
             }
         }
     }
 
-    // Toggle para dispositivos móveis
     &-toggle {
         display: none;
         flex-direction: column;
@@ -54,7 +46,7 @@ $border-color: #e0e0e0; // Cor da borda sutil
         span {
             width: 25px;
             height: 3px;
-            background: $light-color;
+            background: #1e293b;
             margin: 4px 0;
             transition: transform 0.3s ease;
         }
