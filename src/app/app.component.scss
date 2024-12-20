@@ -10,10 +10,9 @@ $content-padding: 1rem; // Variável para o espaçamento das seções
 $max-width: 900px; // Largura máxima para as seções
 $background-color: #1e293b; // Fundo escuro
 $primary-color: #333333; // Cor primária para o texto
+$highlight-color: #0652e9; // Cor do destaque
 $heading-font-size: 3.5rem; // Tamanho da fonte para os títulos
 $body-font-size: 1.2rem; // Tamanho da fonte para o corpo do texto
-
-
 
 * {
     font-family: 'Poppins', sans-serif; // Usando a fonte Poppins
@@ -33,7 +32,7 @@ h3 {
 .developer-description {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem; // Tamanho de fonte para os títulos
-    color: #0652e9;
+    color: $highlight-color;
     font-weight: 300;
     margin-top: 10px;
 }
@@ -42,6 +41,7 @@ p {
     font-family: 'Poppins', sans-serif; // Usando a fonte Poppins
     font-size: $body-font-size; // Tamanho de fonte para o parágrafo
     color: #666666; // Cor para o texto do parágrafo
+
 }
 
 .content {
@@ -53,10 +53,9 @@ p {
     padding: $content-padding;
 }
 
-
 section {
     margin: 2rem 0; // Espaçamento entre as seções
-    width: 80%; // Opcional: limite a largura das seções
+    width: 80%; // Limita a largura das seções
     max-width: $max-width; // Largura máxima para a seção
 }
 
@@ -70,7 +69,9 @@ section {
 .LinkedIn {
     display: flex; // Usando flexbox para alinhar os itens dentro do parágrafo
     align-items: center; // Alinha verticalmente o ícone e o texto
-    color: #0652e9;
+    color: #1a1a1a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.0rem; // Tamanho de fonte para os títulos
 }
 
 .GitHub img,
@@ -78,7 +79,6 @@ section {
     filter: brightness(0) saturate(100%) invert(32%) sepia(100%) saturate(536%) hue-rotate(179deg) brightness(93%) contrast(98%);
     margin-right: 8px; // Espaço entre o ícone e o texto
 }
-
 
 h1,
 h2,
