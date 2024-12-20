@@ -145,3 +145,40 @@ p {
     transform: scale(1.1); // Aumenta o tamanho ao passar o mouse
     color: $highlight-color; // Muda a cor para o destaque
 }
+
+#images {
+    display: flex;
+    flex-direction: column;
+    /* Organiza as imagens uma abaixo da outra */
+    gap: 20px;
+    /* Espaçamento entre as imagens */
+    align-items: center;
+    /* Centraliza as imagens horizontalmente */
+}
+
+.image-container {
+    width: 100%;
+    /* Faz com que cada imagem ocupe 100% da largura disponível */
+    height: auto;
+    /* Mantém a proporção natural da imagem */
+    overflow: hidden;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    /* Inicialmente deslocadas para baixo */
+    transition: opacity 1s, transform 1s;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    /* Mantém a proporção da imagem */
+    object-fit: cover;
+}
+
+.image-container.slide-in {
+    opacity: 1;
+    /* Torna a imagem visível */
+    transform: translateY(0);
+    /* Desloca para a posição inicial */
+}
