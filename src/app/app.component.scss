@@ -1,130 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap'); // Importando a fonte Orbitron
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
 
 @font-face {
-    font-family: 'Poppins'; // Nome da fonte
-    src: url('/assets/fonts/poppins.woff2') format('woff2'),
-        url('/assets/fonts/poppins.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Consolas';
+    src: local('Consolas'), local('Comic Sans MS');
 }
 
 @font-face {
-    font-family: 'Fira Code'; // Nome da fonte Fira Code
-    src: url('/assets/fonts/fira-code.woff2') format('woff2'),
-        url('/assets/fonts/fira-code.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Orbitron';
+    src: local('Orbitron'), url('https://fonts.gstatic.com/s/orbitron/v12/yMJ0VtugKT-Q-ObRftuDR5z30CkWvGb3eG6bCecF78E.woff2') format('woff2');
 }
 
-@font-face {
-    font-family: 'Consolas'; // Nome da fonte Consolas
-    src: local('Consolas'), local('Comic Sans MS'); // Consolas já é nativa no Windows
-    font-weight: normal;
-    font-style: normal;
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+    }
+
+    .photo-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .titulo {
+        font-size: 2.5rem;
+    }
 }
 
-@font-face {
-    font-family: 'Orbitron'; // Nome da fonte Orbitron
-    src: local('Orbitron'), url('https://fonts.gstatic.com/s/orbitron/v12/yMJ0VtugKT-Q-ObRftuDR5z30CkWvGb3eG6bCecF78E.woff2') format('woff2'); // Link para a fonte Orbitron
-    font-weight: normal;
-    font-style: normal;
-}
-
-$content-padding: 1rem; // Variável para o espaçamento das seções
-$max-width: 900px; // Largura máxima para as seções
-$background-color: #1e293b; // Fundo escuro
-$primary-color: #333333; // Cor primária para o texto
-$highlight-color: #0652e9; // Cor do destaque
-$heading-font-size: 3.5rem; // Tamanho da fonte para os títulos
-$body-font-size: 1.2rem; // Tamanho da fonte para o corpo do texto
+$content-padding: 1rem;
+$max-width: 900px;
+$primary-color: #333333;
+$highlight-color: #0652e9;
+$heading-font-size: 3.5rem;
+$body-font-size: 1.2rem;
 
 * {
-    font-family: 'Orbitron', sans-serif; // Usando a fonte Consolas
-    color: $primary-color; // Cor padrão do texto
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: $primary-color;
 }
 
-h1,
-h2,
-h3 {
-    font-size: $heading-font-size; // Tamanho de fonte para os títulos
-    color: #1a1a1a; // Cor específica para os títulos
-    font-family: 'Orbitron', sans-serif; // Usando a fonte Consolas
+.titulo,
+.developer-description,
+p {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.titulo {
+    font-size: $heading-font-size;
+    color: #1a1a1a;
 }
 
 .developer-description {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem; // Tamanho de fonte para os títulos
+    font-size: 1.5rem;
     color: $highlight-color;
     font-weight: 300;
     margin-top: 10px;
 }
 
 p {
-    font-family: 'Orbitron', sans-serif; // Usando a fonte Consolas
-    font-size: $body-font-size; // Tamanho de fonte para o parágrafo
-    color: #666666; // Cor para o texto do parágrafo
+    font-size: $body-font-size;
+    color: #666666;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center; // Alinha horizontalmente no centro
-    min-height: 150vh; // Garante que a altura seja no mínimo a altura da tela
-    text-align: center; // Alinha o texto no centro
+    align-items: center;
+    min-height: 150vh;
+    text-align: center;
     padding: $content-padding;
 }
 
 section {
-    margin: 2rem 0; // Espaçamento entre as seções
-    width: 80%; // Limita a largura das seções
-    max-width: $max-width; // Largura máxima para a seção
-}
-
-#contatos {
-    display: flex;
-    justify-content: center; // Alinha os itens no centro horizontalmente
-    gap: 20px; // Espaço entre os itens
-}
-
-.GitHub,
-.LinkedIn {
-    display: flex; // Usando flexbox para alinhar os itens dentro do parágrafo
-    align-items: center; // Alinha verticalmente o ícone e o texto
-    color: #1a1a1a;
-    font-family: 'Consolas', sans-serif;
-    font-size: 1.0rem; // Tamanho de fonte para os títulos
-}
-
-.GitHub img,
-.LinkedIn img {
-    filter: brightness(0) saturate(100%) invert(32%) sepia(100%) saturate(536%) hue-rotate(179deg) brightness(93%) contrast(98%);
-    margin-right: 8px; // Espaço entre o ícone e o texto
-}
-
-h1,
-h2,
-p {
-    margin: 0.5rem 0; // Espaçamento entre os elementos
+    margin: 2rem 0;
+    width: 80%;
+    max-width: $max-width;
 }
 
 .photo-circle {
-    width: 250px; // Aumente o tamanho do círculo
-    height: 250px; // Mantém a proporção
-    border-radius: 50%; // Faz o círculo
-    overflow: hidden; // Garante que a imagem não ultrapasse o círculo
-    border: 5px solid $highlight-color; // Uma borda mais espessa para destacar
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); // Sombra mais visível
-    margin: 2rem auto; // Centraliza com mais espaçamento
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid $highlight-color;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    margin: 2rem auto;
 }
 
 .photo-circle img {
-    width: 100%; // Garante que a imagem preencha o círculo
-    height: 100%; // Garante proporção ajustada
-    object-fit: cover; // Ajusta sem distorcer a imagem
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-#home {
-    animation: fadeIn 2s ease-out; // Animação de fade in
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
@@ -137,48 +113,79 @@ p {
     }
 }
 
-#contatos p {
-    transition: transform 0.3s ease, color 0.3s ease; // Transição suave ao passar o mouse
+span.text {
+    color: #0652e9;
 }
 
-#contatos p:hover {
-    transform: scale(1.1); // Aumenta o tamanho ao passar o mouse
-    color: $highlight-color; // Muda a cor para o destaque
+#home {
+    animation: fadeIn 2s ease-out;
 }
+
+#contatos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: $highlight-color;
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0;
+        animation: fadeInText 1s ease-out forwards;
+        font-size: 12px;
+
+        img {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease-out, visibility 0s 0.5s;
+            filter: invert(43%) sepia(56%) saturate(1427%) hue-rotate(186deg) brightness(94%) contrast(92%);
+            width: 24px;
+            height: 24px;
+        }
+
+        &.show img {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+    }
+
+    p {
+        animation: fadeIn 2s ease-out;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    p:hover {
+        transform: scale(1.1);
+    }
+}
+
 
 #images {
     display: flex;
     flex-direction: column;
-    /* Organiza as imagens uma abaixo da outra */
     gap: 20px;
-    /* Espaçamento entre as imagens */
     align-items: center;
-    /* Centraliza as imagens horizontalmente */
 }
 
 .image-container {
     width: 100%;
-    /* Faz com que cada imagem ocupe 100% da largura disponível */
     height: auto;
-    /* Mantém a proporção natural da imagem */
     overflow: hidden;
     border-radius: 10px;
     opacity: 0;
     transform: translateY(50px);
-    /* Inicialmente deslocadas para baixo */
     transition: opacity 1s, transform 1s;
 }
 
 .image-container img {
     width: 100%;
     height: auto;
-    /* Mantém a proporção da imagem */
     object-fit: cover;
 }
 
 .image-container.slide-in {
     opacity: 1;
-    /* Torna a imagem visível */
     transform: translateY(0);
-    /* Desloca para a posição inicial */
 }

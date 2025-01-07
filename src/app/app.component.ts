@@ -1,8 +1,6 @@
-import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
-import { NavbarComponent } from "./navbar/navbar.component";
+import { Component, Inject, OnInit, PLATFORM_ID, AfterViewInit, Renderer2 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -11,42 +9,53 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'Portfolio';
 
-  @Input() inicio: string = '<'; // Definindo uma variável de entrada para o nome
-  @Input() fim: string = '/>'; // Definindo uma variável de entrada para o nome
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private renderer: Renderer2
+  ) { }
 
   ngOnInit() {
-    // Chama a função observeImages apenas no lado do navegador
     if (isPlatformBrowser(this.platformId)) {
-      // Usa uma pequena delay para garantir que a DOM foi carregada
-      setTimeout(() => this.observeImages(), 0);
+      this.observeImages();
+    }
+  }
+
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.addClassToContactItems();
+      }, 1000);
     }
   }
 
   observeImages() {
-    const images = document.querySelectorAll('.image-container'); // Seleciona as imagens
+    if (isPlatformBrowser(this.platformId)) {
+      const images = document.querySelectorAll('.image-container');
 
-    // Criando o IntersectionObserver para monitorar as imagens
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Adiciona a classe que ativa a animação quando a imagem entra na tela
-          entry.target.classList.add('slide-in');
-          observer.unobserve(entry.target); // Desabilita a observação após a animação
-        }
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.renderer.addClass(entry.target, 'slide-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.5
       });
-    }, {
-      threshold: 0.5 // Define que a animação começa quando 50% da imagem estiver visível
-    });
 
-    images.forEach(image => {
-      observer.observe(image); // Começa a observar cada imagem
-    });
+      images.forEach(image => {
+        observer.observe(image);
+      });
+    }
   }
 
-
+  private addClassToContactItems() {
+    const contactItems = document.querySelectorAll('.contact-item');
+    contactItems.forEach(item => {
+      this.renderer.addClass(item, 'show');
+    });
+  }
 }
