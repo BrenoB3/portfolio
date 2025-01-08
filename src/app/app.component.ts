@@ -1,11 +1,13 @@
 import { Component, Inject, OnInit, PLATFORM_ID, AfterViewInit, Renderer2 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
