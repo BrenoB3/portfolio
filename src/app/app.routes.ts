@@ -3,7 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 
 export const routes: Routes = [
-    { path: 'app-home', component: HomeComponent },
-    { path: 'app-about', component: AboutComponent },
-    { path: '', redirectTo: '/app-home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'about', component: AboutComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
