@@ -18,13 +18,6 @@ $body-font-size: 1.2rem;
     margin: 0 auto;
 }
 
-section {
-    margin: 1rem 0;
-    width: 100%;
-    max-width: $max-width;
-    opacity: 1;
-}
-
 .carousel {
     width: 100%;
     overflow: hidden;
@@ -33,8 +26,8 @@ section {
 
 .carousel-track {
     display: flex;
-    width: 100px;
-    animation: scrollLeft 10s linear infinite;
+    width: max-content; // Ajusta automaticamente à quantidade de itens
+    animation: scrollLeft 50s linear infinite;
 }
 
 .carousel-item {
@@ -50,6 +43,6 @@ section {
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }

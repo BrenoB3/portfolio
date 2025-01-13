@@ -13,6 +13,21 @@ export class SkillComponent {
   images: string[] = [
     'assets/java.png',
     'assets/typescript.png',
+    'assets/js.png',
+    'assets/dart.png',
+    'assets/delphi.png',
+
+    'assets/angular.png',
+    'assets/springboot.png',
+
+    'assets/css.png',
+    'assets/html.png',
+
+    'assets/mysql.png',
+    'assets/postgresql.png',
+
+    'assets/typescript.png',
+    'assets/typescript.png',
     'assets/typescript.png',
     'assets/typescript.png',
     'assets/typescript.png',

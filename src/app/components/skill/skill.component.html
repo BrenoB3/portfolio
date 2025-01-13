@@ -1,16 +1,12 @@
 <div class="content">
-
-
-
-
     <div class="carousel">
         <div class="carousel-track">
-            <!-- Exibe todas as imagens do carrossel -->
-            <img *ngFor="let image of images" [src]="image" alt="Ícone" class="carousel-item">
+            <ng-container *ngFor="let image of images">
+                <img [src]="image" alt="Ícone" class="carousel-item">
+            </ng-container>
+            <ng-container *ngFor="let image of images">
+                <img [src]="image" alt="Ícone" class="carousel-item">
+            </ng-container>
         </div>
     </div>
-
-
-
-
 </div>
