@@ -1,0 +1,55 @@
+$content-padding: 1rem;
+$max-width: 1200px;
+$primary-color: #333333;
+$highlight-color: #0652e9;
+$heading-font-size: 3.5rem;
+$body-font-size: 1.2rem;
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: $content-padding;
+    gap: 1rem;
+    height: 700px;
+    width: 100%;
+    max-width: $max-width;
+    background-color: $primary-color;
+    margin: 0 auto;
+}
+
+section {
+    margin: 1rem 0;
+    width: 100%;
+    max-width: $max-width;
+    opacity: 1;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100px;
+    animation: scrollLeft 10s linear infinite;
+}
+
+.carousel-item {
+    width: 64px;
+    height: 64px;
+    margin-right: 30px;
+    object-fit: contain;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
