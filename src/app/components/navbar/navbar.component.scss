@@ -60,13 +60,9 @@ $highlight-color: #0652e9;
         }
     }
 
-    /* Para telas menores que 768px */
+    /* Para telas menores que 800px */
     @media (max-width: 800px) {
-        display: flex;
-        flex-direction: row;
         gap: 1rem;
-        justify-content: center;
-        align-items: center;
 
         li {
             a {
