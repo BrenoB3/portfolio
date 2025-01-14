@@ -1,17 +1,36 @@
+@font-face {
+    font-family: 'Consolas';
+    src: local('Consolas');
+}
+
+
 $content-padding: 1rem;
 $max-width: 1200px;
-$primary-color: #333333;
+$primary-color: white;
 $highlight-color: #0652e9;
 $heading-font-size: 3.5rem;
 $body-font-size: 1.2rem;
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Consolas', sans-serif;
+    //  color: $primary-color;
+}
+
+p {
+    font-size: $body-font-size;
+    color: #666666;
+}
+
 .content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: $content-padding;
     gap: 1rem;
-    height: 700px;
+    height: auto;
     width: 100%;
     max-width: $max-width;
     background-color: $primary-color;
@@ -22,11 +41,12 @@ $body-font-size: 1.2rem;
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .carousel-track {
     display: flex;
-    width: max-content; // Ajusta automaticamente à quantidade de itens
+    width: max-content;
     animation: scrollLeft 50s linear infinite;
 }
 
@@ -36,6 +56,13 @@ $body-font-size: 1.2rem;
     margin-right: 30px;
     object-fit: contain;
 }
+
+.skills {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ffffff;
+}
+
 
 @keyframes scrollLeft {
     0% {
