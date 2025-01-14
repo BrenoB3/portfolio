@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID, AfterViewInit, Renderer2 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'home',
