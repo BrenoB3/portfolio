@@ -7,7 +7,6 @@
 
 $highlight-color: #0652e9;
 
-
 .navbar {
     display: flex;
     align-items: center;
@@ -28,23 +27,55 @@ $highlight-color: #0652e9;
         }
     }
 
-    &-links {
+    gap: 2rem;
+    list-style: none;
+
+    li {
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 18px;
+            font-family: 'Orbitron', sans-serif;
+            transition: color 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+                color: $highlight-color;
+                transform: scale(1.2);
+            }
+
+            /* Ícone */
+            .icon {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+            }
+
+            /* Texto - visível em telas grandes */
+            .text {
+                display: inline-block;
+            }
+        }
+    }
+
+    /* Para telas menores que 768px */
+    @media (max-width: 800px) {
         display: flex;
-        gap: 2rem;
-        list-style: none;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
 
         li {
             a {
-                display: inline-block;
-                text-decoration: none;
-                color: #1e293b;
-                font-size: 18px;
-                font-family: 'Orbitron', sans-serif;
-                transition: color 0.3s ease, transform 0.3s ease;
+                .text {
+                    display: none;
+                }
 
-                &:hover {
-                    color: $highlight-color;
-                    transform: scale(1.2);
+                .icon {
+                    display: inline-block;
                 }
             }
         }
