@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Consolas';
+    src: local('Consolas');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Consolas', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.contact-form-section {
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 2rem auto;
+
+    header {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+    address {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        text-align: center;
+
+        p {
+            margin: 1rem 0;
+        }
+
+        a {
+            color: #0652e9;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #333;
+            }
+        }
+
+        strong {
+            font-weight: bold;
+            color: #333;
+        }
+    }
+}
