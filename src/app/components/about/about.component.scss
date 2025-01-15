@@ -70,7 +70,7 @@ p {
     height: 700px;
     overflow: hidden;
 
-    @media (max-width: 800px) {
+    @media (max-width: 940px) {
         flex-direction: column;
         padding: 1rem;
         height: auto;
@@ -89,6 +89,7 @@ section {
 }
 
 #home2 {
+    margin-top: 10px;
     animation: slideRight 1s ease-out forwards;
 }
 
@@ -101,7 +102,7 @@ section {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     margin: 2rem auto;
 
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
         width: 200px;
         height: 200px;
     }

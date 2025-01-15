@@ -15,6 +15,18 @@
     }
 }
 
+@keyframes restoreWindow {
+    0% {
+        opacity: 0;
+        transform: scaleY(0) translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1) translateY(0);
+    }
+}
+
 body {
     animation: bottomToTop 1s ease-out;
 }
@@ -104,6 +116,9 @@ a {
     border: 1px solid #e1e1e1;
     display: flex;
     flex-direction: column;
+    transform: scaleY(0) translateY(50%);
+    opacity: 0;
+    animation: restoreWindow 1s ease-out forwards;
 }
 
 .mac-header {
