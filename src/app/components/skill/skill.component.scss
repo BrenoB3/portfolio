@@ -21,17 +21,13 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // padding: $content-padding;
     padding-top: $content-padding;
-
     gap: 1rem;
     height: auto;
     width: 100%;
     max-width: $max-width;
     background-color: $primary-color;
     margin: 0 auto;
-
-    /* Animação */
     opacity: 0;
     transform: translateY(-20px);
     animation: fadeInDown 1s ease-out forwards;
@@ -47,7 +43,6 @@ p {
 .carousel-track {
     display: flex;
     width: 100%;
-    /* Limita a largura da pista */
     animation: scrollLeft 50s linear infinite;
 }
 
@@ -58,7 +53,6 @@ p {
     object-fit: contain;
 }
 
-/* Restringe a largura do carousel */
 @keyframes scrollLeft {
     0% {
         transform: translateX(0);
@@ -66,20 +60,16 @@ p {
 
     100% {
         transform: translateX(-100%);
-        /* Ajuste a translação */
     }
 }
 
 .skills {
     width: 100%;
     max-width: $max-width;
-    /* Garante que o conteúdo não ultrapasse a largura máxima */
     padding: 1rem;
     background-color: #ffffff;
     margin-top: 2rem;
-    /* Adiciona um espaço entre o carousel e a seção de habilidades */
     box-sizing: border-box;
-    /* Garantir que o padding não cause overflow */
 }
 
 @keyframes fadeInDown {

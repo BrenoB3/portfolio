@@ -129,6 +129,7 @@ span.text {
         opacity: 0;
         animation: fadeInText 1s ease-out forwards;
         font-size: 12px;
+        transition: transform 0.3s ease;
 
         a {
             display: flex;
@@ -151,6 +152,10 @@ span.text {
             visibility: visible;
             opacity: 1;
             transition: opacity 0.5s ease-out;
+        }
+
+        &:hover {
+            transform: scale(1.1);
         }
     }
 
