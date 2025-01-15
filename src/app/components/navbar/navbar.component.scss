@@ -6,16 +6,18 @@
 }
 
 $highlight-color: #0652e9;
+$navbar-height: 12px;
+$font-size: 18px;
 
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 1rem 1rem;
+    justify-content: space-between;
+    padding: 1rem;
     background: #ffffff;
     color: #1e293b;
     border-bottom: 1px solid #e0e0e0;
-    height: 12px;
+    height: $navbar-height;
 
     &-logo {
         display: flex;
@@ -24,56 +26,6 @@ $highlight-color: #0652e9;
         img {
             max-height: 40px;
             width: auto;
-        }
-    }
-
-    gap: 2rem;
-    list-style: none;
-
-    li {
-        a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #1e293b;
-            font-size: 18px;
-            font-family: 'Orbitron', sans-serif;
-            transition: color 0.3s ease, transform 0.3s ease;
-
-            &:hover {
-                color: $highlight-color;
-                transform: scale(1.2);
-            }
-
-            /* Ícone */
-            .icon {
-                display: inline-block;
-                width: 24px;
-                height: 24px;
-                margin-right: 8px;
-            }
-
-            /* Texto - visível em telas grandes */
-            .text {
-                display: inline-block;
-            }
-        }
-    }
-
-    /* Para telas menores que 800px */
-    @media (max-width: 800px) {
-        gap: 1rem;
-
-        li {
-            a {
-                .text {
-                    display: none;
-                }
-
-                .icon {
-                    display: inline-block;
-                }
-            }
         }
     }
 
@@ -88,6 +40,59 @@ $highlight-color: #0652e9;
             background: #1e293b;
             margin: 4px 0;
             transition: transform 0.3s ease;
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: #333333;
+                font-size: $font-size;
+                font-family: 'Orbitron', sans-serif;
+                transition: color 0.3s ease, transform 0.3s ease;
+
+                &:hover {
+                    color: $highlight-color;
+                    transform: scale(1.2);
+                }
+
+                .icon {
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 8px;
+                }
+
+                .text {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    /* Responsividade para telas menores que 800px */
+    @media (max-width: 800px) {
+        ul {
+            gap: 1rem;
+
+            li {
+                a {
+                    .text {
+                        display: none;
+                    }
+
+                    .icon {
+                        display: inline-block;
+                    }
+                }
+            }
         }
     }
 }
