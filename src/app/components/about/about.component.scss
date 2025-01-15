@@ -43,7 +43,8 @@ $body-font-size: 1.2rem;
 
 p {
     font-size: $body-font-size;
-    color: #666666;
+    color: #1a1a1a;
+    line-height: 1.5;
 }
 
 .bold-text {
@@ -67,6 +68,13 @@ p {
     padding: $content-padding;
     gap: 1rem;
     height: 700px;
+    overflow: hidden;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+    }
 }
 
 section {
@@ -92,6 +100,11 @@ section {
     border: 5px solid $highlight-color;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     margin: 2rem auto;
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 .photo-circle img {
@@ -100,18 +113,12 @@ section {
     object-fit: cover;
 }
 
-@media (max-width: 768px) {
-    .content {
-        padding: 1rem;
-        flex-direction: column;
-    }
-
-    .photo-circle {
-        width: 200px;
-        height: 200px;
-    }
-
+@media (max-width: 800px) {
     .titulo {
         font-size: 2.5rem;
+    }
+
+    .content {
+        height: auto; // Permite que o conteúdo se ajuste à altura disponível
     }
 }
