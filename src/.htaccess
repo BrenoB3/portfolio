@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirecionar a raiz para /home
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteRule ^ /home [L,R=301]
+
+    # Regras do Angular para lidar com rotas
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>
